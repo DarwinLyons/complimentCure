@@ -15,27 +15,27 @@
     <div class="wrapper">
       
       <h1><i class="fa fa-heart animated pulse infinite"></i>Compliment Cure <i class="fa fa-heart animated pulse infinite"></i></h1>
-      <h2>What problem can't be solved with a compliment?</h2>
+      <p>Because what problem can't be solved with a compliment?</p>
       <section class="intro">
+        <h4>But wait...<span>expressing feelings is hard!</span></h4>
         <ul>
           <li>
-            <p><span> Almost nothing is the answer.</span> But wait...<span>expressing feelings is hard!</span></p>
+            <p>Can't think of a kind word?</p>
           </li>
           <li>
-            <p>Don't know how to tell a person they are <span>TheBomb.com</span></p>
+            <p>Have a friend who's down in the dumps?</p>
           </li>
           <li>
-            <p>Have a friend who's down in the dumps and you can't find the words to cheer them up?</p>
-          </li>
-          <li>
-            <p>Not used to expressing feelings with words because emojis 😀 👻 🦄 exist?</p>
-          </li>
-          <li>
-            <p>compliment cure will create a custom note for your friend, significant other, or anyone you just can't find the words to tell them how amazing they are</p>
+            <p>Not used to expressing feelings because emojis 😀 👻 🦄 exist?</p>
           </li>
         </ul>
       </section><!-- intro -->
     </div> <!-- wrapper -->
+    <div class="explanation">
+      <div class="wrapper">
+        <p>Compliment Cure will create a custom note for your friend, significant other, or anyone you love and just can't find the words to tell them how amazing they are</p>
+      </div>
+    </div>
   </header>
   <main>
     <form action="">
@@ -46,7 +46,7 @@
             <h3>First thing's first</h3>
             <div class="nameContainer">
               <label for="name">What is this awesome person's name?</label>
-              <input type="text" id="name" name="name" required="true" value="name">
+              <input type="text" placeholder="Their Name" id="name" name="name" required="true" value="name" class="name">
             </div><!-- nameContainer -->
           </fieldset><!-- name -->
         </section><!-- wrapper -->
@@ -58,23 +58,23 @@
             <h3>Second thing's second</h3>
             <p> Who are they to you?</p>
             <div class="friendContainer relationship">
-              <label for="friend">Friend</label>
-              <input type="radio" name="friend" id="friend" value="friend">
+              <label for="friend">Friend?</label>
+              <input type="radio" name="relationship" id="friend" value="friend">
             </div>
 
             <div class="relativeContainer relationship">
-              <label for="relative">Family Member</label>
-              <input type="radio" name="relative" id="relative" value="relative">
+              <label for="relative">Family Member?</label>
+              <input type="radio" name="relationship" id="relative" value="relative">
             </div>
 
             <div class="romanticPartnerContainer relationship">
-              <label for="romanticPartner">Romantic Partner</label>
-              <input type="radio" name="romanticPartner" id="romanticPartner" value="romanticPartner">
+              <label for="romanticPartner">Romantic Partner?</label>
+              <input type="radio" name="relationship" id="romanticPartner" value="romanticPartner">
             </div>
 
             <div class="potentialContainer relationship">
-              <label for="potential">Hopefully Soon To Be Romantic Partner</label>
-              <input type="radio" name="potential" id="potential" value="potential">
+              <label for="potential">(Hopefully Soon To Be) Romantic Partner?</label>
+              <input type="radio" name="relationship" id="potential" value="potential">
             </div>
 
           </fieldset> <!-- relationship -->
@@ -83,17 +83,21 @@
       <div class="submitContainer backgroundThree">
         <section class="wrapper">
 
-          <h3>Third thing's third, click the button below to generate your note!</h3>
+          <h3>Third thing's third</h3>
+          <p>Click the button below to generate your note!</p>
           <section class="results">
             <p>Not exactly what you want to say? Click again to generate another compliment!</p>
+            <button type="reset">Try Again</button>
           </section>
-          <input type="submit" value="Cure with a Compliment!">
+          <div class="buttonCenter">
+            <button type="submit" value="Cure with a Compliment!">Cure with a Compliment</button>
+          </div>
         </section>
       </div>
     </form>
   </main>  <!-- wrapper -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
   
 </body>
 </html>

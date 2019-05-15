@@ -1,0 +1,51 @@
+//styles form
+fieldset {
+  border: none;
+}
+main h3 {
+  padding: 50px 0;
+  text-transform: uppercase;
+}
+
+//styles name input 
+
+.nameContainer input {
+  margin: 25px 0;
+  padding: 10px;
+  width: 100%;
+  transition: background 0.5s;
+  border: 5px solid $accentPinkLight;
+  &:active {
+    background: $accentPinkLight;
+  }
+}
+
+.nameContainer input:focus {
+  background: $accentPinkLight;
+  text-transform: uppercase;
+}
+
+//styles relationship
+.relationship input {
+  margin: 25px 0;
+  &[type=radio]{
+  }
+}
+
+.results {
+  display: none;
+}
+
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: $accentPinkLight;
+  border: 5px solid $accentPink;
+  text-align: center;
+}

@@ -1,7 +1,34 @@
 //header styles
 
-header {
-  background: $accentGreen;
-  margin: 0 auto;
-  text-align: center;
+h1 {
+  font-size: 1rem;
+  padding: 50px 0;
+}
+h2 {
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0 0 50px 0;
+  line-height: 1.7;
+}
+
+h4 span {
+  display: block;
+  text-align: left;
+}
+
+.explanation {
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 50px 0;
+}
+
+@media (min-width: 440px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+}
+
+@media (min-width: 596px) {
+  
 }

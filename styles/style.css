@@ -204,47 +204,129 @@ a {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   color: #474946;
   font-family: "Playfair Display SC", serif;
 }
 
 p,
 input,
-label {
+label,
+h4 {
   color: #474946;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-header,
-main {
+h1,
+h2,
+h3,
+h4 {
   margin: 0 auto;
   text-align: center;
 }
 
 header {
-  background: #a1e2ad;
+  background-image: linear-gradient(55deg, #A1D6E2 50%, #a1e2ad 50%);
 }
 
-.backgroundOne {
+.explanation {
   background: #e2b5a1;
 }
 
-.backgroundTwo {
+.backgroundOne {
   background: #A1D6E2;
 }
 
+.backgroundTwo {
+  background: #a1e2ad;
+}
+
 .backgroundThree {
-  background: #a8a1e2;
+  background: #A1D6E2;
 }
 
 span {
   text-transform: uppercase;
 }
 
-header {
-  background: #a1e2ad;
-  margin: 0 auto;
+h1 {
+  font-size: 1rem;
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0 0 50px 0;
+  line-height: 1.7;
+}
+
+h4 span {
+  display: block;
+  text-align: left;
+}
+
+.explanation {
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 50px 0;
+}
+
+@media (min-width: 440px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+fieldset {
+  border: none;
+}
+
+main h3 {
+  padding: 50px 0;
+  text-transform: uppercase;
+}
+
+.nameContainer input {
+  margin: 25px 0;
+  padding: 10px;
+  width: 100%;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+  border: 5px solid #e2b5a1;
+}
+
+.nameContainer input:active {
+  background: #e2b5a1;
+}
+
+.nameContainer input:focus {
+  background: #e2b5a1;
+  text-transform: uppercase;
+}
+
+.relationship input {
+  margin: 25px 0;
+}
+
+.results {
+  display: none;
+}
+
+.buttonCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #e2b5a1;
+  border: 5px solid #ad1957;
   text-align: center;
 }

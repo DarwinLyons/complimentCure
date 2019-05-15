@@ -25,15 +25,15 @@ a {
 
 h1,
 h2,
-h3,
-h4 {
+h3, {
   color: $text;
   font-family: $headerText;
 }
 
 p,
 input,
-label {
+label, 
+h4 {
   color: $text;
   font-family: $pageText;
 }
@@ -58,23 +58,28 @@ label {
 //   left: 0;
 // }
 
-header,
-main {
+h1,
+h2,
+h3,
+h4 {
   margin: 0 auto;
   text-align: center;
 }
 header {
-  background: $accentGreen;
+  background-image: linear-gradient(55deg, $accentBlueLight 50%, $accentGreen 50%);
 }
-.backgroundOne {
+.explanation {
   background: $accentPinkLight;
 }
-.backgroundTwo {
+.backgroundOne {
   background: $accentBlueLight;
+}
+.backgroundTwo {
+  background: $accentGreen;
 }
 
 .backgroundThree {
-  background: $accentPurple;
+  background: $accentBlueLight;
 }
 
 span {
