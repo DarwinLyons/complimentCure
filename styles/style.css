@@ -178,3 +178,73 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 125%;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #474946;
+  font-family: "Playfair Display SC", serif;
+}
+
+p,
+input,
+label {
+  color: #474946;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header,
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+
+header {
+  background: #a1e2ad;
+}
+
+.backgroundOne {
+  background: #e2b5a1;
+}
+
+.backgroundTwo {
+  background: #A1D6E2;
+}
+
+.backgroundThree {
+  background: #a8a1e2;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+header {
+  background: #a1e2ad;
+  margin: 0 auto;
+  text-align: center;
+}

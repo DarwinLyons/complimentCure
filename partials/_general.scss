@@ -1,0 +1,82 @@
+// General styles for the site
+
+html {
+    font-size: 125%;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $text;
+  font-family: $headerText;
+}
+
+p,
+input,
+label {
+  color: $text;
+  font-family: $pageText;
+}
+
+
+// img {
+//   max-width: 100%;
+//   width: 100%;
+//   display: block;
+// }
+
+// .skipLink {
+//   position: absolute;
+//   left: -1000px;
+//   top: 5px;
+//   z-index: 999;
+//   background: white;
+//   color: black;
+// }
+
+// .skipLink:focus {
+//   left: 0;
+// }
+
+header,
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+header {
+  background: $accentGreen;
+}
+.backgroundOne {
+  background: $accentPinkLight;
+}
+.backgroundTwo {
+  background: $accentBlueLight;
+}
+
+.backgroundThree {
+  background: $accentPurple;
+}
+
+span {
+  text-transform: uppercase;
+}

@@ -5,64 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Compliment Cure</title>
-  <link href="https://fonts.googleapis.com/css?family=Cabin|Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
   integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/style.css"/>
 </head>
 <body>
-  <main class="wrapper">
-    <header>
-      <h1><i class="fa fa-heart animated pulse infinite"></i> Compliment Cure <i class="fa fa-heart animated pulse infinite"></i></h1>
-      <h2>What can't be solved with a compliment?</h2>
+  <header>
+    <div class="wrapper">
+      
+      <h1><i class="fa fa-heart animated pulse infinite"></i>Compliment Cure <i class="fa fa-heart animated pulse infinite"></i></h1>
+      <h2>What problem can't be solved with a compliment?</h2>
       <section class="intro">
-        <p>Almost nothing is the answer. <span>But wait...</span>expressing feelings is hard!</p>
-        <p>Don't know how to tell a person they are <span>The Bomb.com</span></p>
-        <p>Have a friend who's down in the dumps and you can't find the words to cheer them up?</p>
-        <p>Not used to expressing feelings with words because emojis 😀 👻 🦄 exist?</p>
-        <p>compliment cure will create a custom note for your friend, significant other, or anyone you just can't find the words to tell them how amazing they are</p>
+        <ul>
+          <li>
+            <p><span> Almost nothing is the answer.</span> But wait...<span>expressing feelings is hard!</span></p>
+          </li>
+          <li>
+            <p>Don't know how to tell a person they are <span>TheBomb.com</span></p>
+          </li>
+          <li>
+            <p>Have a friend who's down in the dumps and you can't find the words to cheer them up?</p>
+          </li>
+          <li>
+            <p>Not used to expressing feelings with words because emojis 😀 👻 🦄 exist?</p>
+          </li>
+          <li>
+            <p>compliment cure will create a custom note for your friend, significant other, or anyone you just can't find the words to tell them how amazing they are</p>
+          </li>
+        </ul>
       </section><!-- intro -->
-  
-    </header>
+    </div> <!-- wrapper -->
+  </header>
+  <main>
     <form action="">
-      <fieldset class="name">
-        <h3>First thing's first</h3>
-        <p>What is this awesome person's name?</p>
-        <div class="nameContainer">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required="true" value="name">
-        </div><!-- nameContainer -->
-      </fieldset>
-      <fieldset class="relationship">
-        <h3>Second thing's second</h3>
-        <p> Who are they to you?</p>
-        <div class="friendContainer relationship">
-          <label for="friend">Friend</label>
-          <input type="radio" name="friend" id="friend" value="friend">
-        </div>
-        <div class="relativeContainer relationship">
-          <label for="relative">Family Member</label>
-          <input type="radio" name="relative" id="relative" value="relative">
-        </div>
-        <div class="romanticPartnerContainer relationship">
-          <label for="romanticPartner">Romantic Partner</label>
-          <input type="radio" name="romanticPartner" id="romanticPartner" value="romanticPartner">
-        </div>
-        <div class="potentialContainer relationship">
+      <div class="backgroundOne">
+        <section class="wrapper">
 
-          <label for="potential">Hopefully Soon To Be Romantic Partner</label>
-          <input type="radio" name="potential" id="potential" value="potential">
-        </div>
-        <div class="submitContainer">
+          <fieldset class="name">
+            <h3>First thing's first</h3>
+            <div class="nameContainer">
+              <label for="name">What is this awesome person's name?</label>
+              <input type="text" id="name" name="name" required="true" value="name">
+            </div><!-- nameContainer -->
+          </fieldset><!-- name -->
+        </section><!-- wrapper -->
+      </div> <!-- backgroundOne -->
+      <div class="backgroundTwo">
+        <section class="wrapper">
+
+          <fieldset class="relationship">
+            <h3>Second thing's second</h3>
+            <p> Who are they to you?</p>
+            <div class="friendContainer relationship">
+              <label for="friend">Friend</label>
+              <input type="radio" name="friend" id="friend" value="friend">
+            </div>
+
+            <div class="relativeContainer relationship">
+              <label for="relative">Family Member</label>
+              <input type="radio" name="relative" id="relative" value="relative">
+            </div>
+
+            <div class="romanticPartnerContainer relationship">
+              <label for="romanticPartner">Romantic Partner</label>
+              <input type="radio" name="romanticPartner" id="romanticPartner" value="romanticPartner">
+            </div>
+
+            <div class="potentialContainer relationship">
+              <label for="potential">Hopefully Soon To Be Romantic Partner</label>
+              <input type="radio" name="potential" id="potential" value="potential">
+            </div>
+
+          </fieldset> <!-- relationship -->
+        </section>
+      </div><!-- backgroundTwo -->
+      <div class="submitContainer backgroundThree">
+        <section class="wrapper">
+
           <h3>Third thing's third, click the button below to generate your note!</h3>
+          <section class="results">
+            <p>Not exactly what you want to say? Click again to generate another compliment!</p>
+          </section>
           <input type="submit" value="Cure with a Compliment!">
-          <p>Not exactly what you want to say? Click again to generate another compliment!</p>
-        </div>
-      </fieldset> //relationship
+        </section>
+      </div>
     </form>
-    <section class="results">
-    </section>
-  </main> //wrapper 
+  </main>  <!-- wrapper -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
   <script src="script.js"></script>
   
