@@ -13,24 +13,43 @@ main h3 {
   margin: 25px 0;
   padding: 10px;
   width: 100%;
-  transition: background 0.5s;
+  transition: background 0.5s, box-shadow 0.5s;
   border: 5px solid $accentPinkLight;
   &:active {
     background: $accentPinkLight;
+    box-shadow: 5px 5px $accentPink;
   }
 }
 
 .nameContainer input:focus {
   background: $accentPinkLight;
-  text-transform: uppercase;
+}
+
+.nameContainer label {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.name p {
+  background: $accentPinkLight;
+  display: inline;
+  padding: 20px 10px;
+  border: 5px solid $accentPink;
 }
 
 //styles relationship
-.relationship input {
+.relationship {
   margin: 25px 0;
-  // &[type=radio]{
-  // }
+  i {
+    padding: 0 15px;
+  }
 }
+
+[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
 
 .buttonCenter {
   display: flex;
@@ -44,6 +63,7 @@ button {
   background: $accentPinkLight;
   border: 10px solid $accentPink;
   text-align: center;
+  color: $text;
 }
 
 //styles results section
@@ -53,4 +73,5 @@ button {
   line-height: 1.5;
   border: 5px solid $accentGreen;
   margin: 20px 0;
+  padding: 50px 20px;
 }

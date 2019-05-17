@@ -3,6 +3,10 @@
 h1 {
   font-size: 1rem;
   padding: 50px 0;
+  .fa {
+    color: $accentPink;
+    margin: 0 5px;
+  }
 }
 h2 {
   font-size: 0.9rem;

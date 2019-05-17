@@ -75,7 +75,7 @@ const complimentOptions = [
 },
 //9
 {
-  compliment: `, you make me laugh so much I giggle in public when I thin about things you've said.`,
+  compliment: `, you make me laugh so much I giggle in public when I think about things you've said.`,
   friend: true,
   relative: false,
   romanticPartner: true,
@@ -163,62 +163,109 @@ const complimentOptions = [
 }
 ]
 
+//name space
+
 //document ready
 $(function() {
 
-  function randoIndex(optionsArray) {
-    //Generating a random number between 0 and the final index position value 
-    const index = Math.floor(Math.random() * optionsArray.length);
-    //Returning our passed in array with a specific index value attached
-    return optionsArray[index]
-  };
-
+  
   //bind click event with button
   $('button').on('click', function(event) {
     //prevent default behaviour of submit button
     event.preventDefault();
     
-    //create an empty array called selectedCompliments to store compliment options 
-    // const selectedCompliments = [];
-   
     // Capturing the complimentee's name
     const complimenteeName = $('input[type=text]').val();
-    
-    
+    console.log(complimenteeName);
+
     //Capturing the complimentee's relationship
     const relationshipCapture = $('input[name=relationship]:checked').val();
 
-    //new variable
-    const filterCompliments = () => {
-      //what is selected?
-      const filtered = complimentOptions.filter((complimentOption) => {
-        // if the relationship is selected, filter thi compliments where that relationship is true and put them in an array
-        if (relationshipCapture === 'friend') {
-          return complimentOption.friend === true;
-        } else if (relationshipCapture === 'relative') {
-          return complimentOption.relative === true;
-        } else if (relationshipCapture === 'romanticPartner') {
-          return complimentOption.romanticPartner === true;
-        } else if (relationshipCapture === 'potential') {
-          return complimentOption.potential === true;
-        }
-         
-      });
-      return filtered;
+    //checking if the radio buttons are checked - I found this on stack overflow
+    function atLeastOneRadio() {
+      return ($('input[type=radio]:checked').size() > 0);
     }
-    // Generating a random index value for the appropriate compliment options array
-    const optionsToDisplay = randoIndex(filterCompliments());
-
-    console.log(optionsToDisplay);
+    console.log(atLeastOneRadio());
     
-    // Printing to the page, the name of the random compliment that is stored in our optionsToDisplay variable 
-    $('.results').html(`<h3>${complimenteeName}${optionsToDisplay.compliment}</h3>`).append(`<p>Not exactly what you want to say? Generate another compliment!</p>`);
-    
+    // creating a requirement for a correct name 
+    if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined) {
+      // add this text to the class nameAlert
+      $('.nameAlert').html(`<p>We need your complimentee's name</p>`);
+      //and scroll to the ID nameScroll I found this answer on jsfiddle by kevinPHPkevin
+      $(`html, body`).animate({
+        scrollTop: $(`#nameScroll`).offset().top
+      }, 1000);
+      //if the relationship inputs are empty- I found this answer on jsfiddle
+    } else if (atLeastOneRadio() === false) {
+      $('.relationshipAlert').html(`<p>We need to know your relationship!</p>`);
+    }
+        
+    //run function, add to the if else 
+    runFilter(complimenteeName, relationshipCapture);
+  
     //on click
   })
- //document ready 
+  //document ready 
+});
+// When i click on this input, I want you to find something with a class if fa and store it in the variable checkBox- this needs its own event listener, and then I need to call it in document ready 
+//Event listener to add new image to the radio button when selected
+$('input[name=relationship]').on('change', function (event) {
+  //create a variable that goes into the direct sibling of this and finds the class far inside that sibling
+  const checkBox = $(this).next(`label`).find('.far');
+  //make a variable to store the font awesome class in all the inputs
+  const allChecks = $(`input[name=relationship]`).next(`label`).find('.far');
+  
+  //remove the checked class and readd the circle class if someone navigates away from this radio button
+  allChecks.removeClass(`fa-check-circle`).addClass(`fa-circle`);
+  
+  //add the checked class to the selected radio button
+  checkBox.removeClass(`fa-circle`).addClass('fa-check-circle');
+
+
 });
 
+ 
+//Create a random index that will take the filtered results from the runFilter function
+function randoIndex(optionsArray) {
+  console.log(optionsArray)
+  //Generating a random number between 0 and the final index position value 
+  const index = Math.floor(Math.random() * optionsArray.length);
+  console.log(index);
+  //Returning our passed in array with a specific index value attached
+  return optionsArray[index]
+  };
+
+// create a function that takes two perameters, that will be the name and relationship the user inputs             
+const runFilter = (name, chosenRelationship) => {
+  //new variable
+  const filterCompliments = () => {
+    //what is selected?
+    const filtered = complimentOptions.filter((complimentOption) => {
+      // if the relationship is selected, filter thi compliments where that relationship is true and put them in an array
+      if (chosenRelationship === 'friend') {
+        return complimentOption.friend === true;
+      } else if (chosenRelationship === 'relative') {
+        return complimentOption.relative === true;
+      } else if (chosenRelationship === 'romanticPartner') {
+        return complimentOption.romanticPartner === true;
+      } else if (chosenRelationship === 'potential') {
+        return complimentOption.potential === true;
+      }
+      
+    });
+    return filtered;
+  }
+  // Generating a random index value for the appropriate compliment options array
+  const optionsToDisplay = randoIndex(filterCompliments());
+  console.log(optionsToDisplay);
+  // Printing to the page, the name of the random compliment that is stored in our optionsToDisplay variable 
+  $('.results').html(`<h3>${name}${optionsToDisplay.compliment}</h3>`).append(`<p>Not exactly what you want to say? Generate another compliment!</p>`);
+  //changing the button text after reset
+  $('.button').html('Compliment again!');
+  //removing original instructions
+  $('.clickRemove').remove();
+}
+            
 
 
 // when it is true that a person is "friend" or whatever, then the compliment from that friend object needs to get pushed to  this empty array, that I am then going to choose from randomly
