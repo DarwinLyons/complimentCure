@@ -46,7 +46,7 @@
             <h3>First thing's first</h3>
             <div class="nameContainer">
               <label for="name">What is this awesome person's name?</label>
-              <input type="text" placeholder="Their Name" id="name" name="name" required="true" value="name" class="name">
+              <input type="text" placeholder="Their Name" id="name" name="name" required="true" value="" class="name">
             </div><!-- nameContainer -->
           </fieldset><!-- name -->
         </section><!-- wrapper -->
@@ -59,22 +59,22 @@
             <p> Who are they to you?</p>
             <div class="friendContainer relationship">
               <label for="friend">Friend?</label>
-              <input type="radio" name="relationship" id="friend" value="friend">
+              <input type="radio" name="relationship" id="friend" value="friend" class="friend">
             </div>
 
             <div class="relativeContainer relationship">
               <label for="relative">Family Member?</label>
-              <input type="radio" name="relationship" id="relative" value="relative">
+              <input type="radio" name="relationship" id="relative" value="relative" class="relative">
             </div>
 
             <div class="romanticPartnerContainer relationship">
               <label for="romanticPartner">Romantic Partner?</label>
-              <input type="radio" name="relationship" id="romanticPartner" value="romanticPartner">
+              <input type="radio" name="relationship" id="romanticPartner" value="romanticPartner" class="romanticPartner">
             </div>
 
             <div class="potentialContainer relationship">
               <label for="potential">(Hopefully Soon To Be) Romantic Partner?</label>
-              <input type="radio" name="relationship" id="potential" value="potential">
+              <input type="radio" name="relationship" id="potential" value="potential" class="potential">
             </div>
 
           </fieldset> <!-- relationship -->
@@ -85,9 +85,7 @@
 
           <h3>Third thing's third</h3>
           <p>Click the button below to generate your note!</p>
-          <section class="results">
-            <p>Not exactly what you want to say? Click again to generate another compliment!</p>
-            <button type="reset">Try Again</button>
+          <section role="region" class="results" aria-live="polite">
           </section>
           <div class="buttonCenter">
             <button type="submit" value="Cure with a Compliment!">Cure with a Compliment</button>

@@ -28,12 +28,8 @@ main h3 {
 //styles relationship
 .relationship input {
   margin: 25px 0;
-  &[type=radio]{
-  }
-}
-
-.results {
-  display: none;
+  // &[type=radio]{
+  // }
 }
 
 .buttonCenter {
@@ -46,6 +42,15 @@ button {
   margin-bottom: 20px;
   border-radius: 10px;
   background: $accentPinkLight;
-  border: 5px solid $accentPink;
+  border: 10px solid $accentPink;
   text-align: center;
+}
+
+//styles results section
+
+.results h3 {
+  background: $accentPinkLight;
+  line-height: 1.5;
+  border: 5px solid $accentGreen;
+  margin: 20px 0;
 }

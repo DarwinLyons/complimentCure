@@ -309,10 +309,6 @@ main h3 {
   margin: 25px 0;
 }
 
-.results {
-  display: none;
-}
-
 .buttonCenter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,6 +323,13 @@ button {
   margin-bottom: 20px;
   border-radius: 10px;
   background: #e2b5a1;
-  border: 5px solid #ad1957;
+  border: 10px solid #ad1957;
   text-align: center;
+}
+
+.results h3 {
+  background: #e2b5a1;
+  line-height: 1.5;
+  border: 5px solid #a1e2ad;
+  margin: 20px 0;
 }
