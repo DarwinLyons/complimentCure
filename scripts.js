@@ -185,29 +185,36 @@ $(function() {
     function atLeastOneRadio() {
       return ($('input[type=radio]:checked').size() > 0);
     }
-    console.log(atLeastOneRadio());
     
     // creating a requirement for a correct name 
     if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined) {
       // add this text to the class nameAlert
-      $('.nameAlert').html(`<p>We need your complimentee's name</p>`);
+      $('.nameAlert').html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
       //and scroll to the ID nameScroll I found this answer on jsfiddle by kevinPHPkevin
       $(`html, body`).animate({
         scrollTop: $(`#nameScroll`).offset().top
-      }, 1000);
-      //if the relationship inputs are empty- I found this answer on jsfiddle
+      }, 2000);
+      //if the relationship inputs are empty
     } else if (atLeastOneRadio() === false) {
-      $('.relationshipAlert').html(`<p>We need to know your relationship!</p>`);
+      //add this text and those classes
+      $('.relationshipAlert').html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`);
+      //and scroll to the id
+      $(`html, body`).animate({
+        scrollTop: $(`#relationshipScroll`).offset().top
+      }, 2000); 
+    } else {
+      //run function for random generator 
+      runFilter(complimenteeName, relationshipCapture);
+      $(`html, body`).animate({
+        scrollTop: $(`#scrollBottom`).offset().top
+      }, 2000); 
     }
         
-    //run function, add to the if else 
-    runFilter(complimenteeName, relationshipCapture);
-  
     //on click
   })
   //document ready 
 });
-// When i click on this input, I want you to find something with a class if fa and store it in the variable checkBox- this needs its own event listener, and then I need to call it in document ready 
+
 //Event listener to add new image to the radio button when selected
 $('input[name=relationship]').on('change', function (event) {
   //create a variable that goes into the direct sibling of this and finds the class far inside that sibling
@@ -220,8 +227,6 @@ $('input[name=relationship]').on('change', function (event) {
   
   //add the checked class to the selected radio button
   checkBox.removeClass(`fa-circle`).addClass('fa-check-circle');
-
-
 });
 
  
@@ -235,7 +240,7 @@ function randoIndex(optionsArray) {
   return optionsArray[index]
   };
 
-// create a function that takes two perameters, that will be the name and relationship the user inputs             
+// create a function that takes two perameters, that will be the name and relationship the user inputs       
 const runFilter = (name, chosenRelationship) => {
   //new variable
   const filterCompliments = () => {
@@ -251,19 +256,31 @@ const runFilter = (name, chosenRelationship) => {
       } else if (chosenRelationship === 'potential') {
         return complimentOption.potential === true;
       }
-      
     });
     return filtered;
   }
+
   // Generating a random index value for the appropriate compliment options array
   const optionsToDisplay = randoIndex(filterCompliments());
   console.log(optionsToDisplay);
   // Printing to the page, the name of the random compliment that is stored in our optionsToDisplay variable 
-  $('.results').html(`<h3>${name}${optionsToDisplay.compliment}</h3>`).append(`<p>Not exactly what you want to say? Generate another compliment!</p>`);
+  $(`.results`).html(`<h3>${name}${optionsToDisplay.compliment}</h3>`);
+  
+  //saves tweet button tag
+  const tweetButton = $(`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button hidden" data-size="large"
+    data-text="${name}${optionsToDisplay.compliment}" 
+    data-show-count="false" id="tweetShare">Tweet</a>`);
+    //puts twitter button on page
+  $(`.twitterButton`).html(tweetButton);
+  //twitter widget from twitter
+  twttr.widgets.load();
+
+  //adding try again text
+  $(`.tryAgain`).html(`<p>Not exactly what you want to say? Generate another compliment!</p>`);
   //changing the button text after reset
-  $('.button').html('Compliment again!');
+  $(`.button`).html(`Compliment again!`);
   //removing original instructions
-  $('.clickRemove').remove();
+  $(`.clickRemove`).remove();
 }
             
 

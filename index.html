@@ -5,64 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Compliment Cure</title>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Source+Sans+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
   integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="styles/style.css"/>
 </head>
 <body>
   <header>
-    <div class="wrapper">
+    <div class="wrapper wrapperSmall">
       
-      <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment Cure <i class="fa fa-heart" aria-hidden="true"></i></h1>
-      <p>Because what problem can't be solved with a compliment?</p>
-      <section class="intro">
-        <h4>But wait...<span>expressing feelings is hard!</span></h4>
-        <ul>
-          <li>
-            <p>Can't think of a kind word?</p>
-          </li>
-          <li>
-            <p>Have a friend who's down in the dumps?</p>
-          </li>
-          <li>
-            <p>Not used to expressing feelings because emojis 😀 👻 🦄 exist?</p>
-          </li>
-        </ul>
-      </section><!-- intro -->
+      <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment <span>Cure <i class="fa fa-heart" aria-hidden="true"></i></span></h1></h1>
+      <p>Because <span>expressing feelings is hard!</span><p>
     </div> <!-- wrapper -->
     <div class="explanation">
       <div class="wrapper">
-        <p>Compliment Cure will create a custom note for your friend, significant other, or anyone you love and just can't find the words to tell them how amazing they are</p>
+        <p>Compliment Cure will create a custom note for anyone you love and just can't find the words to tell them how amazing they are!</p>
+        <div class="arrow">
+          <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+        </div>
+        <span class="sr-only">Scroll down</span>
       </div>
     </div>
   </header>
   <main>
     <form action="" method="post">
       <div class="backgroundOne">
-        <section class="wrapper">
+        <section class="wrapper wrapperSmall">
 
           <fieldset class="name" id="nameScroll">
             <h3>First thing's first</h3>
-            <div class="nameAlert alert" role="region" aria-live="polite"></div>
             <div class="nameContainer">
-              <label for="name">What is this awesome person's name?</label>
+              <label class="nameAlert" role="region" aria-live="polite" for="name">What is this awesome person's name?</label>
               <input type="text" placeholder="Their Name" id="name" name="name" required value="" class="name" autocomplete="off">
             </div><!-- nameContainer -->
           </fieldset><!-- name -->
         </section><!-- wrapper -->
       </div> <!-- backgroundOne -->
       <div class="backgroundTwo">
-        <section class="wrapper">
+        <section class="wrapper wrapperSmall">
 
           <fieldset class="relationshipContainer">
             <h3>Second thing's second</h3>
-            <p class="relationshipAlert">Who are they to you? Click the best descriptor.</p>
+            <p class="relationshipAlert" id="relationshipScroll">Who are they to you? Click the best descriptor.</p>
             <div class="friendContainer relationship">
               <input type="radio" name="relationship" id="friend" value="friend" class="friend">
-                <label for="friend">
+                <label for="friend" class="focus">
                   Friend?
-                  <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i>
+                  <i class="far fa-circle" aria-hidden="true" title="empty checkbox"></i>
                   <span class="sr-only">Empty Checkbox</span>
               </label>
             </div>
@@ -98,19 +88,27 @@
         </section>
       </div><!-- backgroundTwo -->
       <div class="submitContainer backgroundThree">
-        <section class="wrapper">
+        <section class="wrapper wrapperSmall">
 
           <h3>Third thing's third</h3>
-          <p class="clickRemove">Click the button below to generate your note!</p>
+          <p class="clickRemove" role="region" aria-live="polite" id="scrollBottom">Click the button below to generate your note!</p>
           <section class="results" role="region" aria-live="polite">
           </section>
-          <div class="buttonCenter">
+          <div id="scrollBottom"></div>
+
+          <div class="twitterButton"></div>
+          
+          <div class="tryAgain"></div>
+          <div class="buttonCenter" role="region" aria-live="polite">
             <button type="submit" value="" class="button">Cure with a Compliment</button>
           </div>
         </section>
       </div>
     </form>
   </main>  <!-- wrapper -->
+  <!-- loads twitter button -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- loads javascript   -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
   <script src="scripts.js"></script>
   

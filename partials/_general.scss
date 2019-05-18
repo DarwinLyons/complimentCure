@@ -38,26 +38,6 @@ h4 {
   font-family: $pageText;
 }
 
-
-// img {
-//   max-width: 100%;
-//   width: 100%;
-//   display: block;
-// }
-
-// .skipLink {
-//   position: absolute;
-//   left: -1000px;
-//   top: 5px;
-//   z-index: 999;
-//   background: white;
-//   color: black;
-// }
-
-// .skipLink:focus {
-//   left: 0;
-// }
-
 h1,
 h2,
 h3,
@@ -81,7 +61,10 @@ header {
 .backgroundThree {
   background: $accentBlueLight;
 }
-
-span {
+h4 span {
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }

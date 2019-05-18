@@ -206,7 +206,7 @@ h1,
 h2,
 h3 {
   color: #474946;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Lobster", cursive;
 }
 
 p,
@@ -214,7 +214,7 @@ input,
 label,
 h4 {
   color: #474946;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1,
@@ -245,12 +245,16 @@ header {
   background: #A1D6E2;
 }
 
-span {
+h4 span {
   text-transform: uppercase;
 }
 
+.hidden {
+  display: none;
+}
+
 h1 {
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 50px 0;
 }
 
@@ -266,30 +270,57 @@ h2 {
   line-height: 1.7;
 }
 
-h4 span {
-  display: block;
-  text-align: left;
+p span {
+  text-transform: uppercase;
 }
 
 .explanation {
   font-size: 1rem;
   line-height: 1.7;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
-@media (min-width: 440px) {
+.arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #474946;
+}
+
+@media (min-width: 504px) {
+  h1 span {
+    display: block;
+  }
+}
+
+@media (min-width: 650px) {
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 966px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h1 span {
+    display: inline-block;
   }
 }
 
 fieldset {
   border: none;
+  padding: 0;
 }
 
 main h3 {
-  padding: 50px 0;
-  text-transform: uppercase;
+  padding: 30px 0;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #ad1957;
 }
 
 .nameContainer input {
@@ -318,24 +349,38 @@ main h3 {
   margin-top: 30px;
 }
 
-.name p {
+.alert {
   background: #e2b5a1;
   display: inline;
   padding: 20px 10px;
   border: 5px solid #ad1957;
+  display: inline-block;
 }
 
 .relationship {
-  margin: 25px 0;
+  padding: 15px 0;
 }
 
 .relationship i {
   padding: 0 15px;
 }
 
+.relationship label {
+  font-size: 0.9rem;
+}
+
 [type="radio"] {
   opacity: 0;
   position: absolute;
+}
+
+[type="radio"]:active .focus {
+  color: #ad1957;
+}
+
+button:focus {
+  -webkit-box-shadow: 5px 5px #ad1957;
+          box-shadow: 5px 5px #ad1957;
 }
 
 .buttonCenter {
@@ -347,7 +392,8 @@ main h3 {
           justify-content: center;
 }
 
-button {
+.button {
+  font-family: "Montserrat", sans-serif;
   padding: 10px 15px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -357,10 +403,21 @@ button {
   color: #474946;
 }
 
+.twitterShareButton {
+  display: inline-block;
+}
+
 .results h3 {
   background: #e2b5a1;
   line-height: 1.5;
   border: 5px solid #a1e2ad;
   margin: 20px 0;
   padding: 50px 20px;
+}
+
+@media (min-width: 760px) {
+  .wrapperSmall {
+    width: 60%;
+    margin: 0 auto;
+  }
 }

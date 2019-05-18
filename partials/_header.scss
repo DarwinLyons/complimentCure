@@ -1,7 +1,7 @@
 //header styles
 
 h1 {
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 50px 0;
   .fa {
     color: $accentPink;
@@ -15,24 +15,40 @@ h2 {
   line-height: 1.7;
 }
 
-h4 span {
-  display: block;
-  text-align: left;
+p span {
+  text-transform: uppercase;
 }
 
 .explanation {
   font-size: 1rem;
   line-height: 1.7;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
-@media (min-width: 440px) {
-  h1 {
-    font-size: 2rem;
+.arrow {
+  display: flex;
+  justify-content: center;
+  color: $text;
+}
+
+@media (min-width: 504px) {
+  h1 span {
+    display: block;
   }
-
 }
 
-@media (min-width: 596px) {
-  
+
+@media (min-width: 650px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 966px) {
+  h1 {
+    font-size: 4rem;
+    span {
+      display: inline-block;
+    }
+  }
 }
