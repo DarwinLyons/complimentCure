@@ -181,24 +181,30 @@ $(function() {
     //Capturing the complimentee's relationship
     const relationshipCapture = $('input[name=relationship]:checked').val();
 
+    //checking if name input is a number
+    function isNumeric(nameNumber) {
+      return ($.isNumeric(complimenteeName));
+    }
+
     //checking if the radio buttons are checked - I found this on stack overflow
     function atLeastOneRadio() {
       return ($('input[type=radio]:checked').size() > 0);
     }
+
     
     // creating a requirement for a correct name 
-    if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined) {
-      // add this text to the class nameAlert
+    if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined || isNumeric() === true ) {
+      // add this text to the class nameAlert and the animated classes
       $('.nameAlert').html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
-      //and scroll to the ID nameScroll I found this answer on jsfiddle by kevinPHPkevin
+      //scroll to the ID nameScroll I found this answer on jsfiddle by kevinPHPkevin
       $(`html, body`).animate({
         scrollTop: $(`#nameScroll`).offset().top
       }, 2000);
       //if the relationship inputs are empty
     } else if (atLeastOneRadio() === false) {
-      //add this text and those classes
+      //add this alert to relationshipAlert the animated classes
       $('.relationshipAlert').html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`);
-      //and scroll to the id
+      //and scroll to the id relationshipScroll
       $(`html, body`).animate({
         scrollTop: $(`#relationshipScroll`).offset().top
       }, 2000); 
@@ -246,7 +252,7 @@ const runFilter = (name, chosenRelationship) => {
   const filterCompliments = () => {
     //what is selected?
     const filtered = complimentOptions.filter((complimentOption) => {
-      // if the relationship is selected, filter thi compliments where that relationship is true and put them in an array
+      // if the relationship is selected, filter the compliments where that relationship is true and put them in an array
       if (chosenRelationship === 'friend') {
         return complimentOption.friend === true;
       } else if (chosenRelationship === 'relative') {
@@ -266,7 +272,10 @@ const runFilter = (name, chosenRelationship) => {
   // Printing to the page, the name of the random compliment that is stored in our optionsToDisplay variable 
   $(`.results`).html(`<h3>${name}${optionsToDisplay.compliment}</h3>`);
   
-  //saves tweet button tag
+  //add text above twitter button
+  $(`.twitterText`).html(`<p>Share your compliment on twitter!</p>`);
+  
+  //saves tweet button tag- Shane Keulen helped me with this
   const tweetButton = $(`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button hidden" data-size="large"
     data-text="${name}${optionsToDisplay.compliment}" 
     data-show-count="false" id="tweetShare">Tweet</a>`);
@@ -276,7 +285,7 @@ const runFilter = (name, chosenRelationship) => {
   twttr.widgets.load();
 
   //adding try again text
-  $(`.tryAgain`).html(`<p>Not exactly what you want to say? Generate another compliment!</p>`);
+  $(`.tryAgain`).html(`<p>Not exactly what you want to say?</p>`);
   //changing the button text after reset
   $(`.button`).html(`Compliment again!`);
   //removing original instructions

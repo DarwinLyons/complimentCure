@@ -259,7 +259,7 @@ h1 {
 }
 
 h1 .fa {
-  color: #ad1957;
+  color: #8F1447;
   margin: 0 5px;
 }
 
@@ -317,10 +317,10 @@ fieldset {
 }
 
 main h3 {
-  padding: 30px 0;
+  padding: 15px 0;
   font-size: 1.5rem;
   letter-spacing: 2px;
-  color: #ad1957;
+  color: #8F1447;
 }
 
 .nameContainer input {
@@ -336,8 +336,8 @@ main h3 {
 
 .nameContainer input:active {
   background: #e2b5a1;
-  -webkit-box-shadow: 5px 5px #ad1957;
-          box-shadow: 5px 5px #ad1957;
+  -webkit-box-shadow: 5px 5px #8F1447;
+          box-shadow: 5px 5px #8F1447;
 }
 
 .nameContainer input:focus {
@@ -346,14 +346,14 @@ main h3 {
 
 .nameContainer label {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .alert {
   background: #e2b5a1;
   display: inline;
   padding: 20px 10px;
-  border: 5px solid #ad1957;
+  border: 5px solid #8F1447;
   display: inline-block;
 }
 
@@ -374,13 +374,19 @@ main h3 {
   position: absolute;
 }
 
-[type="radio"]:active .focus {
-  color: #ad1957;
+[type="radio"] + label {
+  -webkit-transition: color 0.5s, text-shadow 0.5s;
+  transition: color 0.5s, text-shadow 0.5s;
 }
 
-button:focus {
-  -webkit-box-shadow: 5px 5px #ad1957;
-          box-shadow: 5px 5px #ad1957;
+[type="radio"]:focus + label
+[type="radio"]:active + label {
+  color: #8F1447;
+}
+
+[type="radio"]:checked + label {
+  color: #8F1447;
+  text-shadow: -1px -1px #8F1447, -2px -2px #8F1447;
 }
 
 .buttonCenter {
@@ -392,15 +398,35 @@ button:focus {
           justify-content: center;
 }
 
-.button {
+button {
   font-family: "Montserrat", sans-serif;
   padding: 10px 15px;
   margin-bottom: 20px;
   border-radius: 10px;
   background: #e2b5a1;
-  border: 10px solid #ad1957;
+  border: 10px solid #8F1447;
   text-align: center;
   color: #474946;
+  -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: background 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
+  transition: background 0.5s, box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+}
+
+button:hover {
+  background: #e8c4b4;
+}
+
+button:focus {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+button:active {
+  -webkit-box-shadow: 5px 5px #8F1447;
+          box-shadow: 5px 5px #8F1447;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
 }
 
 .twitterShareButton {
@@ -415,9 +441,39 @@ button:focus {
   padding: 50px 20px;
 }
 
+@media (min-width: 455px) {
+  .relationship label {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 585px) {
+  .relationship label span {
+    display: block;
+  }
+}
+
+@media (min-width: 660px) {
+  .relationship label span {
+    display: inline-block;
+  }
+}
+
 @media (min-width: 760px) {
   .wrapperSmall {
     width: 60%;
     margin: 0 auto;
+  }
+  main h3 {
+    font-size: 2rem;
+  }
+  .relationship label span {
+    display: block;
+  }
+}
+
+@media (min-width: 890px) {
+  .relationship label span {
+    display: inline-block;
   }
 }
