@@ -176,7 +176,6 @@ $(function() {
     
     // Capturing the complimentee's name
     const complimenteeName = $('input[type=text]').val();
-    console.log(complimenteeName);
 
     //Capturing the complimentee's relationship
     const relationshipCapture = $('input[name=relationship]:checked').val();
@@ -196,7 +195,7 @@ $(function() {
     if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined || isNumeric() === true ) {
       // add this text to the class nameAlert and the animated classes
       $('.nameAlert').html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
-      //scroll to the ID nameScroll I found this answer on jsfiddle by kevinPHPkevin
+      //go into html and body (to get all browsers), animate and then scroll to the ID nameScroll, offset gets the coordinates and .top goes to the top of the coordinates, then 2000 is the milisecond count of the animation. I found this answer on jsfiddle by kevinPHPkevin
       $(`html, body`).animate({
         scrollTop: $(`#nameScroll`).offset().top
       }, 2000);
@@ -211,6 +210,7 @@ $(function() {
     } else {
       //run function for random generator 
       runFilter(complimenteeName, relationshipCapture);
+      //scroll to see the answer
       $(`html, body`).animate({
         scrollTop: $(`#scrollBottom`).offset().top
       }, 2000); 
@@ -291,19 +291,4 @@ const runFilter = (name, chosenRelationship) => {
   //removing original instructions
   $(`.clickRemove`).remove();
 }
-            
-
-
-// when it is true that a person is "friend" or whatever, then the compliment from that friend object needs to get pushed to  this empty array, that I am then going to choose from randomly
-    
-//using user's relationship, narrow down our resaults to the specific compliment type- looking at all the objects and checking for what is true do a filter() so if friend is true and partner is true return object compliment we created above outside click 
-
-//random index 
-
-//this targets the existing .results class and puts our compliment item inside of it.
-
-//switch out the generate button with a reset button
-
-//reset page 
-
-//send option via email or tweet
+          

@@ -19,7 +19,7 @@
       <p>Because <span>expressing feelings is hard!</span><p>
     </div> <!-- wrapper -->
     <div class="explanation">
-      <div class="wrapper">
+      <div class="wrapper wrapperSmall">
         <p>Compliment Cure will create a custom note for anyone you love and just can't find the words to tell them how amazing they are!</p>
         <div class="arrow">
           <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
@@ -29,7 +29,7 @@
     </div>
   </header>
   <main>
-    <form action="" method="post">
+    <form action="" method="post" onSubmit="return false;">
       <div class="backgroundOne">
         <section class="wrapper wrapperSmall">
 
@@ -45,9 +45,9 @@
       <div class="backgroundTwo">
         <section class="wrapper wrapperSmall">
 
-          <fieldset class="relationshipContainer">
+          <fieldset class="relationshipContainer" id="relationshipScroll">
             <h3>Second thing's second</h3>
-            <p class="relationshipAlert" id="relationshipScroll">Who are they to you? Click the best descriptor.</p>
+            <p class="relationshipAlert">Who are they to you? Click the best descriptor.</p>
             <div class="friendContainer relationship">
               <input type="radio" name="relationship" id="friend" value="friend" class="friend">
                 <label for="friend" class="focus">
@@ -90,8 +90,8 @@
       <div class="submitContainer backgroundThree">
         <section class="wrapper wrapperSmall">
 
-          <h3>Third thing's third</h3>
-          <p class="clickRemove" role="region" aria-live="polite" id="scrollBottom">Click the button below to generate your note!</p>
+          <h3 id="scrollBottom">Third thing's third</h3>
+          <p class="clickRemove" role="region" aria-live="polite">Click the button below to generate your note!</p>
           <section class="results" role="region" aria-live="polite">
           </section>
           <div id="scrollBottom" class="twitterText"></div>
@@ -100,7 +100,7 @@
           
           <div class="tryAgain"></div>
           <div class="buttonCenter" role="region" aria-live="polite">
-            <button type="submit" value="" class="button">Cure with a Compliment</button>
+            <button type="button" value="" class="button">Cure with a Compliment</button>
           </div>
         </section>
       </div>

@@ -263,14 +263,11 @@ h1 .fa {
   margin: 0 5px;
 }
 
-h2 {
-  font-size: 0.9rem;
-  text-align: left;
-  padding: 0 0 50px 0;
-  line-height: 1.7;
+header p {
+  text-align: center;
 }
 
-p span {
+header p span {
   text-transform: uppercase;
 }
 
@@ -336,12 +333,12 @@ main h3 {
 
 .nameContainer input:active {
   background: #e2b5a1;
-  -webkit-box-shadow: 5px 5px #8F1447;
-          box-shadow: 5px 5px #8F1447;
 }
 
 .nameContainer input:focus {
   background: #e2b5a1;
+  -webkit-box-shadow: 5px 5px #8F1447;
+          box-shadow: 5px 5px #8F1447;
 }
 
 .nameContainer label {
@@ -387,6 +384,10 @@ main h3 {
 [type="radio"]:checked + label {
   color: #8F1447;
   text-shadow: -1px -1px #8F1447, -2px -2px #8F1447;
+}
+
+.submitContainer {
+  padding-bottom: 30px;
 }
 
 .buttonCenter {

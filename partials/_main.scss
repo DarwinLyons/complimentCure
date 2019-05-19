@@ -20,12 +20,12 @@ main h3 {
   border: 5px solid $accentPinkLight;
   &:active {
     background: $accentPinkLight;
-    box-shadow: 5px 5px $accentPink;
   }
 }
 
 .nameContainer input:focus {
   background: $accentPinkLight;
+  box-shadow: 5px 5px $accentPink;
 }
 
 .nameContainer label {
@@ -74,7 +74,11 @@ main h3 {
   -2px -2px $accentPink;
 }
 
-//styles results section
+//styles submit section
+
+.submitContainer {
+  padding-bottom: 30px;
+} 
 
 .buttonCenter {
   display: flex;
