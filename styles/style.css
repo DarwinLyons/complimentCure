@@ -377,14 +377,15 @@ main h3 {
   transition: color 0.5s, text-shadow 0.5s;
 }
 
-[type="radio"]:focus + label
+[type="radio"]:focus + label,
 [type="radio"]:active + label {
   color: #8F1447;
+  text-shadow: -1px -1px #8F1447;
 }
 
 [type="radio"]:checked + label {
   color: #8F1447;
-  text-shadow: -1px -1px #8F1447, -2px -2px #8F1447;
+  text-shadow: -1px -1px #8F1447, -2px -2px #8F1447, -3px -3px #8F1447;
 }
 
 .submit-container {

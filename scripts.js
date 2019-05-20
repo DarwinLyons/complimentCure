@@ -384,20 +384,10 @@ $(`#name`).keyup(function (event) {
   }
 });
 
-//scroll to relationship section if user hits enter in name input 
-$(`#scroll-button`).click(function () {
-  page.animate({
-    scrollTop: $(`#relationship-scroll`).offset().top
-  }, 2000); 
-});
-
 //clears name alert when user enters text in input 
 $(`#name`).on(`input`, function () {
-  $(`.name-alert`).empty().addClass(`alert-change`);
+  $(`.name-alert`).empty().addClass(`alert-change`).html(`<label>What is this awesome person's name?</label>`);
 });
-
-
-
 
 //Event listener to add new image to the radio button when selected, Safi helped me with this
 $(`input[name=relationship]`).on(`change`, function (event) {
@@ -413,7 +403,7 @@ $(`input[name=relationship]`).on(`change`, function (event) {
   checkBox.removeClass(`fa-circle`).addClass(`fa-check-circle`).html(`<span class="sr-only">Checked Checkbox</span>`);
   
   // clears relationship alert when user selects radio
-  $(`.relationship-alert`).empty().addClass(`alert-change-relationship`);
+  $(`.relationship-alert`).empty().addClass(`alert-change-relationship`).html(`<p>Who are they to you? Click the best descriptor.</p>`);
 });
 
  

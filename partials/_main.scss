@@ -76,15 +76,17 @@ main h3 {
   transition: color 0.5s, text-shadow 0.5s;
 }
 
-[type="radio"]:focus + label
+[type="radio"]:focus + label,
 [type="radio"]:active + label{
   color: $accent-pink;
+  text-shadow: -1px -1px $accent-pink;
 }
 
 [type="radio"]:checked + label {
   color: $accent-pink;
   text-shadow: -1px -1px $accent-pink,
-  -2px -2px $accent-pink;
+  -2px -2px $accent-pink,
+  -3px -3px $accent-pink;
 }
 
 //styles submit section
