@@ -41,6 +41,16 @@ main h3 {
   display: inline-block;
 }
 
+.alert-change {
+  background: $accent-blue;
+  border: 5px solid $accent-blue;
+}
+
+.alert-change-relationship {
+  background: $accent-green;
+  border: 5px solid $accent-green;
+}
+
 .scroll-button {
   opacity: 0;
 }
@@ -102,7 +112,7 @@ main h3 {
 }
 
 .button:hover {
-  background: lighten($color: $accent-pink-light, $amount: 5)
+  background: lighten($accent-pink-light, 10%);
 }
 
 .button:focus {

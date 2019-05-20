@@ -149,7 +149,7 @@ const complimentOptions = [
   potential: true,
 },
 {
-  compliment: `, are you ever wrong? I seems like you're always right to me!`,
+  compliment: `, are you ever wrong? It seems like you're always right to me!`,
   friend: true,
   relative: true,
   romanticPartner: true,
@@ -343,15 +343,16 @@ $(function() {
     // creating a requirement for a correct name 
     if (complimenteeName === `` || complimenteeName === ` ` || complimenteeName === undefined || isNumeric() === true ) {
       // add this text to the class name-alert and add the animated classes
-      $(`.name-alert`).html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
+      $(`.name-alert`).html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`).removeClass(`alert-change`);
       //go into page, animate and then scroll to the ID nameScroll, offset gets the coordinates and .top goes to the top of the coordinates, then 2000 is the milisecond count of the animation. I found this answer on jsfiddle by kevinPHPkevin
       page.animate({
         scrollTop: $(`#name-scroll`).offset().top
       }, 2000);
       //if the relationship inputs are empty
-    } else if (atLeastOneRadio() === false) {
+    } else if 
+    (atLeastOneRadio() === false) {
       //add this alert to relationship-alert and add the animated classes
-      $(`.relationship-alert`).html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`);
+      $(`.relationship-alert`).html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`).removeClass(`alert-change-relationship`);
       //and scroll to the id relationshipScroll
       page.animate({
         scrollTop: $(`#relationship-scroll`).offset().top
@@ -390,6 +391,14 @@ $(`#scroll-button`).click(function () {
   }, 2000); 
 });
 
+//clears name alert when user enters text in input 
+$(`#name`).on(`input`, function () {
+  $(`.name-alert`).empty().addClass(`alert-change`);
+});
+
+
+
+
 //Event listener to add new image to the radio button when selected, Safi helped me with this
 $(`input[name=relationship]`).on(`change`, function (event) {
   //create a variable that goes into the direct sibling of this and finds the class far inside that sibling
@@ -402,6 +411,9 @@ $(`input[name=relationship]`).on(`change`, function (event) {
   
   //add the checked class to the selected radio button, and change the sr-only span
   checkBox.removeClass(`fa-circle`).addClass(`fa-check-circle`).html(`<span class="sr-only">Checked Checkbox</span>`);
+  
+  // clears relationship alert when user selects radio
+  $(`.relationship-alert`).empty().addClass(`alert-change-relationship`);
 });
 
  
