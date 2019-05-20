@@ -10,59 +10,50 @@ html {
     width: 80%;
 }
 
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
+h1 {
+  color: $text;
+}
+
+h2,
+h3 {
+  color: $accent-pink;
+}
+
 h1,
 h2,
 h3 {
-  color: $text;
-  font-family: $headerText;
+  font-family: $header-text;
+  margin: 0 auto;
+  text-align: center;
 }
 
 p,
 input,
-label, 
-h4 {
+label {
   color: $text;
-  font-family: $pageText;
+  font-family: $page-text;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 0 auto;
-  text-align: center;
-}
 header {
-  background-image: linear-gradient(55deg, $accentBlueLight 50%, $accentGreen 50%);
-}
-.explanation {
-  background: $accentPinkLight;
-}
-.backgroundOne {
-  background: $accentBlueLight;
-}
-.backgroundTwo {
-  background: $accentGreen;
+  background-image: linear-gradient(55deg, $accent-blue 50%, $accent-green 50%);
 }
 
-.backgroundThree {
-  background: $accentBlueLight;
+.explanation {
+  background: $accent-pink-light;
 }
-h4 span {
-  text-transform: uppercase;
+
+.background-one,
+.background-three {
+  background: $accent-blue;
+}
+
+.background-two {
+  background: $accent-green;
 }
 
 .hidden {

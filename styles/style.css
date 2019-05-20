@@ -189,40 +189,33 @@ html {
   width: 80%;
 }
 
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
+h1 {
+  color: #474946;
+}
+
+h2,
+h3 {
+  color: #8F1447;
+}
+
 h1,
 h2,
 h3 {
-  color: #474946;
   font-family: "Lobster", cursive;
+  margin: 0 auto;
+  text-align: center;
 }
 
 p,
 input,
-label,
-h4 {
+label {
   color: #474946;
   font-family: "Montserrat", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0 auto;
-  text-align: center;
 }
 
 header {
@@ -233,20 +226,13 @@ header {
   background: #e2b5a1;
 }
 
-.backgroundOne {
+.background-one,
+.background-three {
   background: #A1D6E2;
 }
 
-.backgroundTwo {
+.background-two {
   background: #a1e2ad;
-}
-
-.backgroundThree {
-  background: #A1D6E2;
-}
-
-h4 span {
-  text-transform: uppercase;
 }
 
 .hidden {
@@ -317,25 +303,29 @@ main h3 {
   padding: 15px 0;
   font-size: 1.5rem;
   letter-spacing: 2px;
-  color: #8F1447;
 }
 
-.nameContainer input {
+.name-container label {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.name-container input {
   margin: 25px 0;
   padding: 10px;
   width: 100%;
+  border: 5px solid #e2b5a1;
   -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, box-shadow 0.5s;
   transition: background 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
-  border: 5px solid #e2b5a1;
 }
 
-.nameContainer input:active {
+.name-container input:active {
   background: #e2b5a1;
 }
 
-.nameContainer input:focus {
+.name-container input:focus {
   background: #e2b5a1;
   -webkit-box-shadow: 5px 5px #8F1447;
           box-shadow: 5px 5px #8F1447;
@@ -344,20 +334,14 @@ main h3 {
   border-color: transparent;
 }
 
-.nameContainer label {
-  display: inline-block;
-  margin-top: 15px;
-}
-
 .alert {
   background: #e2b5a1;
-  display: inline;
   padding: 20px 10px;
   border: 5px solid #8F1447;
   display: inline-block;
 }
 
-.scrollButton {
+.scroll-button {
   opacity: 0;
 }
 
@@ -393,11 +377,11 @@ main h3 {
   text-shadow: -1px -1px #8F1447, -2px -2px #8F1447;
 }
 
-.submitContainer {
+.submit-container {
   padding-bottom: 30px;
 }
 
-.buttonCenter {
+.button-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,7 +422,7 @@ main h3 {
           transform: scale(0.9, 0.9);
 }
 
-.twitterShareButton {
+.twitter-share-button {
   display: inline-block;
 }
 
@@ -451,7 +435,7 @@ main h3 {
           justify-content: center;
 }
 
-.results h3 {
+.results h2 {
   background: #e2b5a1;
   line-height: 1.5;
   border: 5px solid #a1e2ad;
@@ -478,7 +462,7 @@ main h3 {
 }
 
 @media (min-width: 760px) {
-  .wrapperSmall {
+  .wrapper-small {
     width: 60%;
     margin: 0 auto;
   }

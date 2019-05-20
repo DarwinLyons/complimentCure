@@ -13,104 +13,110 @@
 </head>
 <body>
   <header>
-    <div class="wrapper wrapperSmall">
-      
-      <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment <span>Cure <i class="fa fa-heart" aria-hidden="true"></i></span></h1></h1>
+
+    <div class="wrapper wrapper-small">
+      <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment <span>Cure <i class="fa fa-heart" aria-hidden="true"></i></span></h1>
       <p>Because <span>expressing feelings is hard!</span><p>
-    </div> <!-- wrapper -->
+    </div> <!-- wrapper wrapper-small -->
     <div class="explanation">
-      <div class="wrapper wrapperSmall">
+      <div class="wrapper wrapper-small">
         <p>Compliment Cure will create a custom note for anyone you love and just can't find the words to tell them how amazing they are!</p>
         <div class="arrow">
           <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
         </div>
         <span class="sr-only">Scroll down</span>
-      </div>
-    </div>
+      </div><!-- wrapper wrapper-small -->
+    </div><!-- explanation -->
   </header>
+
   <main>
     <form action="" method="post" onSubmit="return false;">
-      <div class="backgroundOne">
-        <section class="wrapper wrapperSmall">
-
-          <fieldset class="name" id="nameScroll">
+      <div class="background-one">
+        <section class="wrapper wrapper-small">
+          <fieldset class="name" id="name-scroll">
             <h3>First thing's first</h3>
-            <div class="nameContainer">
-              <label class="nameAlert" role="region" aria-live="polite" for="name">What is this awesome person's name?</label>
+            <div class="name-container">
+              <label class="name-alert" role="region" aria-live="polite" for="name">What is this awesome person's name?</label>
               <input type="text" placeholder="Their Name" id="name" name="name" required value="" class="name" autocomplete="off">
-              <button id="scrollButton" class="scrollButton"></button>
-            </div><!-- nameContainer -->
+              <button id="scroll-button" class="scroll-button"></button>
+            </div><!-- name-container -->
           </fieldset><!-- name -->
-        </section><!-- wrapper -->
-      </div> <!-- backgroundOne -->
-      <div class="backgroundTwo">
-        <section class="wrapper wrapperSmall">
+        </section><!-- wrapper wrapper-small -->
+      </div> <!-- background-one -->
 
-          <fieldset class="relationshipContainer" id="relationshipScroll">
+      <div class="background-two">
+        <section class="wrapper wrapper-small">
+          <fieldset class="relationship-container" id="relationship-scroll">
             <h3>Second thing's second</h3>
-            <p class="relationshipAlert">Who are they to you? Click the best descriptor.</p>
-            <div class="friendContainer relationship">
+            <p class="relationship-alert">Who are they to you? Click the best descriptor.</p>
+            <div class="friend-container relationship">
               <input type="radio" name="relationship" id="friend" value="friend" class="friend">
                 <label for="friend" class="focus">
                   Friend?
                   <i class="far fa-circle" aria-hidden="true" title="empty checkbox"></i>
                   <span class="sr-only">Empty Checkbox</span>
               </label>
-            </div>
+            </div><!-- friend-container relationship -->
 
-            <div class="relativeContainer relationship">
+            <div class="relative-container relationship">
               <input type="radio" name="relationship" id="relative" value="relative" class="relative">
               <label for="relative">
                 Family Member?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i>
                 <span class="sr-only">Empty Checkbox</span>
               </label>
-            </div>
+            </div><!-- relative-container relationship -->
 
-            <div class="romanticPartnerContainer relationship">
-              <input type="radio" name="relationship" id="romanticPartner" value="romanticPartner" class="romanticPartner">
-              <label for="romanticPartner">
+            <div class="romantic-partner-container relationship">
+              <input type="radio" name="relationship" id="romantic-partner" value="romantic-partner" class="romantic-partner">
+              <label for="romantic-partner">
                 Romantic Partner?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i>
                 <span class="sr-only">Empty Checkbox</span>
               </label>
-            </div>
+            </div><!-- romantic-partner-container relationship -->
 
-            <div class="potentialContainer relationship">
+            <div class="potential-container relationship">
               <input type="radio" name="relationship" id="potential" value="potential" class="potential">
               <label for="potential">
                 (Hopefully Soon To Be) Romantic <span>Partner?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i></span>
                 <span class="sr-only">Empty Checkbox</span>
               </label>
-            </div>
+            </div><!-- potential-container relationship -->
 
           </fieldset> <!-- relationship -->
-        </section>
-      </div><!-- backgroundTwo -->
-      <div class="submitContainer backgroundThree">
-        <section class="wrapper wrapperSmall">
+        </section><!-- wrapper wrapper-small -->
+      </div><!-- background-two -->
 
-          <h3 id="scrollBottom">Third thing's third</h3>
-          <p class="clickRemove" role="region" aria-live="polite">Click the button below to generate your note!</p>
+      <div class="submit-container background-three">
+        <section class="wrapper wrapper-small">
+
+          <h3 id="scroll-bottom">Third thing's third</h3>
+          <p class="click-remove" role="region" aria-live="polite">Click the button below to generate your note!</p>
+
           <section class="results" role="region" aria-live="polite">
           </section>
-          <div id="scrollBottom" class="twitterText"></div>
 
-          <div class="twitterButton"></div>
+          <div class="twitter-text"></div>
+
+          <div class="twitter-button"></div>
           
-          <div class="tryAgain"></div>
-          <div class="buttonCenter" role="region" aria-live="polite">
-            <button type="button" value="" class="button buttonNew">Cure with a Compliment</button>
+          <div class="try-again"></div>
+
+          <div class="button-center" role="region" aria-live="polite">
+            <button type="button" value="" class="button">Cure with a Compliment</button>
           </div>
-        </section>
-      </div>
+
+        </section><!-- wrapper wrapper-small -->
+      </div><!-- submit-container background-three -->
     </form>
-  </main>  <!-- wrapper -->
+  </main> 
+
   <!-- loads twitter button -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <!-- loads javascript   -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
   <script src="scripts.js"></script>
   
 </body>
