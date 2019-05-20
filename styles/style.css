@@ -229,10 +229,12 @@ header {
 .background-one,
 .background-three {
   background: #A1D6E2;
+  padding-bottom: 10px;
 }
 
 .background-two {
   background: #a1e2ad;
+  padding-bottom: 10px;
 }
 
 .hidden {
