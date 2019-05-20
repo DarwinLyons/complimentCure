@@ -26,6 +26,9 @@ main h3 {
 .nameContainer input:focus {
   background: $accentPinkLight;
   box-shadow: 5px 5px $accentPink;
+  outline: none;
+  outline-style:none;
+  border-color:transparent;
 }
 
 .nameContainer label {
@@ -39,6 +42,10 @@ main h3 {
   padding: 20px 10px;
   border: 5px solid $accentPink;
   display: inline-block;
+}
+
+.scrollButton {
+  opacity: 0;
 }
 
 //styles relationship
@@ -85,7 +92,7 @@ main h3 {
   justify-content: center;
 }
 
-button {
+.button {
   font-family: $pageText;
   padding: 10px 15px;
   margin-bottom: 20px;
@@ -95,17 +102,18 @@ button {
   text-align: center;
   color: $text;
   transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
+  outline: none;
 }
 
-button:hover {
+.button:hover {
   background: lighten($color: $accentPinkLight, $amount: 5)
 }
 
-button:focus {
+.button:focus {
   transform: scale(1.1, 1.1);
 }
 
-button:active {
+.button:active {
   box-shadow: 5px 5px $accentPink;
   transform: scale(0.9, 0.9);
 
@@ -114,6 +122,11 @@ button:active {
 
 .twitterShareButton {
   display: inline-block;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
 }
 
 

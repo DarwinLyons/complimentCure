@@ -339,6 +339,9 @@ main h3 {
   background: #e2b5a1;
   -webkit-box-shadow: 5px 5px #8F1447;
           box-shadow: 5px 5px #8F1447;
+  outline: none;
+  outline-style: none;
+  border-color: transparent;
 }
 
 .nameContainer label {
@@ -352,6 +355,10 @@ main h3 {
   padding: 20px 10px;
   border: 5px solid #8F1447;
   display: inline-block;
+}
+
+.scrollButton {
+  opacity: 0;
 }
 
 .relationship {
@@ -399,7 +406,7 @@ main h3 {
           justify-content: center;
 }
 
-button {
+.button {
   font-family: "Montserrat", sans-serif;
   padding: 10px 15px;
   margin-bottom: 20px;
@@ -412,18 +419,19 @@ button {
   transition: background 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
   transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
   transition: background 0.5s, box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  outline: none;
 }
 
-button:hover {
+.button:hover {
   background: #e8c4b4;
 }
 
-button:focus {
+.button:focus {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
 }
 
-button:active {
+.button:active {
   -webkit-box-shadow: 5px 5px #8F1447;
           box-shadow: 5px 5px #8F1447;
   -webkit-transform: scale(0.9, 0.9);
@@ -432,6 +440,15 @@ button:active {
 
 .twitterShareButton {
   display: inline-block;
+}
+
+.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .results h3 {

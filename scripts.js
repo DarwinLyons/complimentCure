@@ -160,25 +160,219 @@ const complimentOptions = [
   relative: true,
   romanticPartner: true,
   potential: true,
+},
+//20 
+{
+  compliment: `, you're so comforting to be around.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//21
+{
+  compliment: `, are you ever wrong? I seems like you're always right to me!`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//22
+{
+  compliment: `, you're like a rainbow and my birthday personified.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//23 
+{
+  compliment: `, when you speak you always say such smart things I feel like I'm watching a really interesting documentary.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//24 
+{
+  compliment: `, sometimes I think about how when we're old we'll still have so much fun together just sitting on porches and feeding ducks.`,
+  friend: true,
+  relative: false,
+  romanticPartner: true,
+  potential: false,
+},
+//25
+{
+  compliment: `, are you a superhero? Cause you should be and your power would be just being very likeable.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//26
+{
+  compliment: `, you're really good at everything you try.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//27
+{
+  compliment: `, you're like my personal hero.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//29
+{
+  compliment: `, your style is so cool I have contacted Vogue about you. I expect to hear back very soon.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//30
+{
+  compliment: `, whenever anything good happens, I want to tell you first.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//31
+{
+  compliment: `, if anything bad every happens I always know it will be OK in the end because you're in my life.`,
+  friend: true,
+  relative: false,
+  romanticPartner: true,
+  potential: false,
+},
+//32
+{
+  compliment: `, if you wanted to move to Mars, I'd move with you. Think about all the fun we'd have running around the craters and waving to Earth!`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: false,
+},
+//33
+{
+  compliment: `, when you come into a room I think, I'm so lucky I get to be friends with that person!`,
+  friend: true,
+  relative: false,
+  romanticPartner: false,
+  potential: false,
+},
+//34
+{
+  compliment: `, isn't it just so wonderful that we found each other?`,
+  friend: false,
+  relative: false,
+  romanticPartner: true,
+  potential: false,
+},
+//35
+{
+  compliment: `, think about how much less fun life was before we met! You make life great.`,
+  friend: false,
+  relative: false,
+  romanticPartner: true,
+  potential: false,
+},
+//36
+{
+  compliment: `, I could listen to you read the phone book. You are THAT interesting.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//37
+{
+  compliment: `, I should really put AAA before your name in my phone, because you're always the first person I want to text.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: false,
+},
+//38
+{
+  compliment: `, I think we'd have a lot of fun if we were in an action movie together. We'd be the best crime fighting duo.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//39
+{
+  compliment: `, who do you think will play us in the movie version of our lives? We're so intersting I just assume it will happen at some point.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: false,
+},
+//40
+{
+  compliment: `, I think you're the coolest.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
+},
+//41
+{
+  compliment: `, you make family gatherings fun.`,
+  friend: false,
+  relative: true,
+  romanticPartner: false,
+  potential: false,
+},
+//42
+{
+  compliment: `, you're like a shooting star in human form.`,
+  friend: true,
+  relative: false,
+  romanticPartner: true,
+  potential: true,
+},
+//43
+{
+  compliment: `, I love listening to you tell me about your day.`,
+  friend: false,
+  relative: false,
+  romanticPartner: true,
+  potential: false,
+},
+//44
+{
+  compliment: `, you're thoughtful and you're funny.`,
+  friend: true,
+  relative: true,
+  romanticPartner: true,
+  potential: true,
 }
-]
 
-//name space
+]
 
 //document ready
 $(function() {
-
-  
-  //bind click event with button
-  $('button').on('click', function(event) {
+  //bind click event with button with a class of button
+  $(`.button`).on(`click`, function(event) {
     //prevent default behaviour of submit button
     event.preventDefault();
-    
+
+    // add a listener on the page to stop all animations when user scrolls- Shane Keulen helped me with this 
+    page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function () {
+      page.stop();
+    });
+
     // Capturing the complimentee's name
-    const complimenteeName = $('input[type=text]').val();
+    const complimenteeName = $(`input[type=text]`).val();
 
     //Capturing the complimentee's relationship
-    const relationshipCapture = $('input[name=relationship]:checked').val();
+    const relationshipCapture = $(`input[name=relationship]:checked`).val();
 
     //checking if name input is a number
     function isNumeric(nameNumber) {
@@ -187,52 +381,71 @@ $(function() {
 
     //checking if the radio buttons are checked - I found this on stack overflow
     function atLeastOneRadio() {
-      return ($('input[type=radio]:checked').size() > 0);
+      return ($(`input[type=radio]:checked`).size() > 0);
     }
-
     
     // creating a requirement for a correct name 
-    if (complimenteeName === '' || complimenteeName === ' ' || complimenteeName === undefined || isNumeric() === true ) {
+    if (complimenteeName === `` || complimenteeName === ` ` || complimenteeName === undefined || isNumeric() === true ) {
       // add this text to the class nameAlert and the animated classes
-      $('.nameAlert').html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
-      //go into html and body (to get all browsers), animate and then scroll to the ID nameScroll, offset gets the coordinates and .top goes to the top of the coordinates, then 2000 is the milisecond count of the animation. I found this answer on jsfiddle by kevinPHPkevin
-      $(`html, body`).animate({
+      $(`.nameAlert`).html(`<p>We need your complimentee's name</p>`).addClass(`alert animated bounceIn delay-2s`);
+      //go into page, animate and then scroll to the ID nameScroll, offset gets the coordinates and .top goes to the top of the coordinates, then 2000 is the milisecond count of the animation. I found this answer on jsfiddle by kevinPHPkevin
+      page.animate({
         scrollTop: $(`#nameScroll`).offset().top
       }, 2000);
       //if the relationship inputs are empty
     } else if (atLeastOneRadio() === false) {
       //add this alert to relationshipAlert the animated classes
-      $('.relationshipAlert').html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`);
+      $(`.relationshipAlert`).html(`<p>We need to know your relationship!</p>`).addClass(`alert animated bounceIn delay-2s`);
       //and scroll to the id relationshipScroll
-      $(`html, body`).animate({
+      page.animate({
         scrollTop: $(`#relationshipScroll`).offset().top
       }, 2000); 
     } else {
+      
       //run function for random generator 
       runFilter(complimenteeName, relationshipCapture);
-      //scroll to see the answer
-      $(`html, body`).animate({
-        scrollTop: $(`#scrollBottom`).offset().top
-      }, 2000); 
+
+      // scroll to see the answer
+      page.animate({ scrollTop: $(`#scrollBottom`).offset().top }, 2000, function () {
+          // remove the listeners added for scroll above 
+          page.off(`scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove`);
+        });
+      return false;
     }
-        
     //on click
   })
   //document ready 
 });
 
+//create a variable for the page to capture for all browsers
+const page = $("html, body");
+
+//event listener to scrollButton
+$(`#name`).keyup(function (event) {
+  if (event.keyCode === 13) {
+    $(`#scrollButton`).click();
+  }
+});
+
+//scroll to relationship section if user hits enter in name input 
+$(`#scrollButton`).click(function () {
+  page.animate({
+    scrollTop: $(`#relationshipScroll`).offset().top
+  }, 2000); 
+});
+
 //Event listener to add new image to the radio button when selected
-$('input[name=relationship]').on('change', function (event) {
+$(`input[name=relationship]`).on(`change`, function (event) {
   //create a variable that goes into the direct sibling of this and finds the class far inside that sibling
-  const checkBox = $(this).next(`label`).find('.far');
+  const checkBox = $(this).next(`label`).find(`.far`);
   //make a variable to store the font awesome class in all the inputs
-  const allChecks = $(`input[name=relationship]`).next(`label`).find('.far');
+  const allChecks = $(`input[name=relationship]`).next(`label`).find(`.far`);
   
-  //remove the checked class and readd the circle class if someone navigates away from this radio button
+  //remove the checked class and re-add the circle class if someone navigates away from this radio button
   allChecks.removeClass(`fa-check-circle`).addClass(`fa-circle`);
   
   //add the checked class to the selected radio button
-  checkBox.removeClass(`fa-circle`).addClass('fa-check-circle');
+  checkBox.removeClass(`fa-circle`).addClass(`fa-check-circle`);
 });
 
  
@@ -253,18 +466,20 @@ const runFilter = (name, chosenRelationship) => {
     //what is selected?
     const filtered = complimentOptions.filter((complimentOption) => {
       // if the relationship is selected, filter the compliments where that relationship is true and put them in an array
-      if (chosenRelationship === 'friend') {
+      if (chosenRelationship === `friend`) {
         return complimentOption.friend === true;
-      } else if (chosenRelationship === 'relative') {
+      } else if (chosenRelationship === `relative`) {
         return complimentOption.relative === true;
-      } else if (chosenRelationship === 'romanticPartner') {
+      } else if (chosenRelationship === `romanticPartner`) {
         return complimentOption.romanticPartner === true;
-      } else if (chosenRelationship === 'potential') {
+      } else if (chosenRelationship === `potential`) {
         return complimentOption.potential === true;
       }
     });
     return filtered;
   }
+
+  
 
   // Generating a random index value for the appropriate compliment options array
   const optionsToDisplay = randoIndex(filterCompliments());
@@ -290,5 +505,5 @@ const runFilter = (name, chosenRelationship) => {
   $(`.button`).html(`Compliment again!`);
   //removing original instructions
   $(`.clickRemove`).remove();
+  
 }
-          
