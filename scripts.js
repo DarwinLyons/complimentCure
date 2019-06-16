@@ -313,6 +313,54 @@ const complimentOptions = [
 
 //document ready
 $(function() {
+  $(`.next`).on(`click`, function(event) {
+    event.preventDefault()
+    page.animate({
+      scrollTop: $(`#name-scroll`).offset().top
+    }, 2000);
+  }),
+    $(`.next`).keypress(function (event) {
+      const code = event.keyCode || event.which;
+
+      if (code === 13) {
+        event.preventDefault()
+        page.animate({
+          scrollTop: $(`#name-scroll`).offset().top
+        }, 2000);
+      }
+    }),
+    $(`.nextTwo`).on(`click`, function (event) {
+      event.preventDefault()
+      page.animate({
+        scrollTop: $(`#relationship-scroll`).offset().top
+      }, 2000);
+    }),
+    $(`.nextTwo`).keypress(function (event) {
+      const code = event.keyCode || event.which;
+
+      if (code === 13) {
+        event.preventDefault()
+        page.animate({
+          scrollTop: $(`#relationship-scroll`).offset().top
+        }, 2000);
+      }
+    }),
+    $(`.nextThree`).on(`click`, function (event) {
+      event.preventDefault()
+      page.animate({
+        scrollTop: $(`#scroll-bottom`).offset().top
+      }, 2000);
+    }),
+    $(`.nextThree`).keypress(function (event) {
+      const code = event.keyCode || event.which;
+
+      if (code === 13) {
+        event.preventDefault()
+        page.animate({
+          scrollTop: $(`#scroll-bottom`).offset().top
+        }, 2000);
+      }
+    }),
   //bind click event with button with a class of button
   $(`.button`).on(`click`, function(event) {
 

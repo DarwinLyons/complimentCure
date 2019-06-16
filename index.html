@@ -5,56 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Compliment Cure</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
   integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="styles/style.css"/>
+  <svg height="0" width="0" style="position:absolute;margin-left: -100%;">
+    <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454
+      C30,20.335,16,28.261,16,28.261z" />
+  </svg>
 </head>
 <body>
   <header>
+    <div class="header">
 
-    <div class="wrapper wrapper-small">
-      <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment <span>Cure <i class="fa fa-heart" aria-hidden="true"></i></span></h1>
-      <p>Because <span>expressing feelings is hard!</span><p>
-    </div> <!-- wrapper wrapper-small -->
+      <div class="wrapper wrapper-small">
+        <h1><i class="fa fa-heart" aria-hidden="true"></i>Compliment <span>Cure <i class="fa fa-heart" aria-hidden="true"></i></span></h1>
+        <p>Because <span>expressing feelings is hard!</span><p>
+      </div> <!-- wrapper wrapper-small -->
+    </div>
+
     <div class="explanation">
       <div class="wrapper wrapper-small">
-        <p>Compliment Cure will create a custom note for anyone you love and just can't find the words to tell them how amazing they are!</p>
+        <p>Compliment Cure will create a custom note for anyone you love!</p>
         <div class="arrow">
-          <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+          <button class="next" type="button" tabindex="1">
+            <svg class="icon is-x2 is-hoverable is-pink--onhover" viewBox="0 0 32 32">
+              <use xlink:href="#heart-icon"></use>
+            </svg>
+            <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+            <span class="sr-only">Scroll down</span>
+          </button>
         </div>
-        <span class="sr-only">Scroll down</span>
       </div><!-- wrapper wrapper-small -->
     </div><!-- explanation -->
   </header>
 
   <main>
     <form action="" method="post" onSubmit="return false;">
-      <div class="background-one">
+      <div class="background-one" id="name-scroll">
         <section class="wrapper wrapper-small">
-          <fieldset class="name" id="name-scroll">
+          <fieldset class="name">
             <h3>First thing's first</h3>
             <div class="name-container">
               <label class="name-alert" role="region" aria-live="polite" for="name">What is this awesome person's name?</label>
-              <input type="text" placeholder="Their Name" id="name" name="name" required value="" class="name" autocomplete="off">
-              <button id="scroll-button" class="scroll-button"></button>
+              <input type="text" placeholder="Their Name" id="name" name="name" required value="" class="name" autocomplete="off" tabindex="2">
               <div class="arrow">
-                <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+                <button class="nextTwo" type="button" tabindex="3">
+                  <svg class="icon is-x2 is-hoverable is-pink--onhover" viewBox="0 0 32 32">
+                    <use xlink:href="#heart-icon"></use>
+                  </svg>
+                  <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+                  <span class="sr-only">Scroll down</span>
+                </button>
               </div>
-              <span class="sr-only">Scroll down</span>
             </div><!-- name-container -->
           </fieldset><!-- name -->
         </section><!-- wrapper wrapper-small -->
       </div> <!-- background-one -->
 
-      <div class="background-two">
+      <div class="background-two" id="relationship-scroll">
         <section class="wrapper wrapper-small">
-          <fieldset class="relationship-container" id="relationship-scroll">
-            <h3>Second thing's second</h3>
+          <h3>Second thing's second</h3>
+          <fieldset class="relationship-container">
             <p class="relationship-alert">Who are they to you? Click the best descriptor.</p>
             <div class="friend-container relationship">
-              <input type="radio" name="relationship" id="friend" value="friend" class="friend">
+              <input type="radio" name="relationship" id="friend" value="friend" class="friend" tabindex="4">
                 <label for="friend" class="focus">
                   Friend?
                   <i class="far fa-circle" aria-hidden="true" title="empty checkbox"></i>
@@ -63,7 +80,7 @@
             </div><!-- friend-container relationship -->
 
             <div class="relative-container relationship">
-              <input type="radio" name="relationship" id="relative" value="relative" class="relative">
+              <input type="radio" name="relationship" id="relative" value="relative" class="relative" tabindex="5">
               <label for="relative">
                 Family Member?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i>
@@ -72,7 +89,7 @@
             </div><!-- relative-container relationship -->
 
             <div class="romantic-partner-container relationship">
-              <input type="radio" name="relationship" id="romantic-partner" value="romantic-partner" class="romantic-partner">
+              <input type="radio" name="relationship" id="romantic-partner" value="romantic-partner" class="romantic-partner" tabindex="6">
               <label for="romantic-partner">
                 Romantic Partner?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i>
@@ -81,7 +98,7 @@
             </div><!-- romantic-partner-container relationship -->
 
             <div class="potential-container relationship">
-              <input type="radio" name="relationship" id="potential" value="potential" class="potential">
+              <input type="radio" name="relationship" id="potential" value="potential" class="potential" tabindex="7">
               <label for="potential">
                 (Hopefully Soon To Be) Romantic <span>Partner?
                 <i aria-hidden="true" class="far fa-circle" title="empty checkbox"></i></span>
@@ -89,9 +106,15 @@
               </label>
             </div><!-- potential-container relationship -->
             <div class="arrow">
-              <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+              <button class="nextThree" type="button" tabindex="8">
+                <svg class="icon is-x2 is-hoverable is-pink--onhover" viewBox="0 0 32 32">
+                  <use xlink:href="#heart-icon"></use>
+                </svg>
+                <i class="fas fa-arrow-down" aria-hidden="true" title="scroll down"></i>
+                <span class="sr-only">Scroll down</span>
+              </button>
             </div>
-            <span class="sr-only">Scroll down</span>
+            </div>
 
           </fieldset> <!-- relationship -->
         </section><!-- wrapper wrapper-small -->
@@ -101,19 +124,22 @@
         <section class="wrapper wrapper-small">
 
           <h3 id="scroll-bottom">Third thing's third</h3>
-          <p class="click-remove" role="region" aria-live="polite">Click the button below to generate your note!</p>
+          <p class="click-remove" role="region" aria-live="polite" tabindex="9">Click the button below to generate your note!</p>
 
           <section class="results" role="region" aria-live="polite">
           </section>
 
-          <div class="twitter-text"></div>
-
-          <div class="twitter-button"></div>
           
           <div class="try-again"></div>
 
           <div class="button-center" role="region" aria-live="polite">
             <button type="button" value="" class="button">Cure with a Compliment</button>
+          </div>
+          <div class="twitter">
+            <div class="twitter-text"></div>
+            
+            <div class="twitter-button"></div>
+
           </div>
 
         </section><!-- wrapper wrapper-small -->

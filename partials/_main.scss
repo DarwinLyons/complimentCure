@@ -1,3 +1,14 @@
+//styles relationship-container
+.background-two,
+.background-one,
+.submit-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 //styles form
 fieldset {
   border: none;
@@ -42,13 +53,13 @@ main h3 {
 }
 
 .alert-change {
-  background: $accent-blue;
-  border: 5px solid $accent-blue;
+  background: transparent;
+  border: transparent;
 }
 
 .alert-change-relationship {
-  background: $accent-green;
-  border: 5px solid $accent-green;
+  background: transparent;
+  border: transparent;
 }
 
 .scroll-button {
@@ -86,7 +97,6 @@ main h3 {
   color: $accent-pink;
   text-shadow: -1px -1px $accent-pink,
   -2px -2px $accent-pink,
-  -3px -3px $accent-pink;
 }
 
 //styles submit section
@@ -114,7 +124,7 @@ main h3 {
 }
 
 .button:hover {
-  background: lighten($accent-pink-light, 10%);
+  background: lighten($accent-pink, 10%);
 }
 
 .button:focus {
@@ -143,6 +153,16 @@ main h3 {
   border: 5px solid $accent-green;
   margin: 20px 0;
   padding: 50px 20px;
+}
+
+.twitter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.try-again {
+  text-align: center;
 }
 
 @media (min-width: 455px) {

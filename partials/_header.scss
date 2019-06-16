@@ -1,5 +1,12 @@
 //header styles
 
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
 h1 {
   font-size: 2rem;
   padding: 50px 0;
@@ -16,11 +23,20 @@ header p {
   }
 }
 
+.header {
+  height: 100%;
+}
+
 
 .explanation {
   font-size: 1rem;
   line-height: 1.7;
   padding: 25px 0;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $accent-pink-light;
 }
 
 .arrow {

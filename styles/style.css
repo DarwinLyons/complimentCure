@@ -181,6 +181,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 125%;
+  background-position: cover, contain;
+  background-repeat: no-repeat, repeat;
+}
+
+body {
+  background-image: url(../assets/texture.jpg);
 }
 
 .wrapper {
@@ -218,27 +224,103 @@ label {
   font-family: "Montserrat", sans-serif;
 }
 
-header {
-  background-image: linear-gradient(55deg, #A1D6E2 50%, #a1e2ad 50%);
-}
-
-.explanation {
-  background: #e2b5a1;
+.header {
+  background-image: linear-gradient(55deg, rgba(161, 214, 226, 0.7) 50%, rgba(161, 226, 173, 0.7) 50%), url(../assets/texture.jpg);
+  background-position: cover, contain;
+  background-repeat: no-repeat, repeat;
 }
 
 .background-one,
 .background-three {
-  background: #A1D6E2;
+  background: rgba(161, 214, 226, 0.7);
   padding-bottom: 10px;
 }
 
 .background-two {
-  background: #a1e2ad;
+  background: rgba(161, 226, 173, 0.7);
   padding-bottom: 10px;
 }
 
 .hidden {
   display: none;
+}
+
+.fa-arrow-down {
+  color: #F1F1F2;
+}
+
+.next,
+.nextTwo,
+.nextThree {
+  background: #8F1447;
+  border: #8F1447;
+  padding: 15px 15px 10px 15px;
+  position: relative;
+  -webkit-transition: background 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: background 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  border-radius: 50%;
+}
+
+.next:hover,
+.nextTwo:hover,
+.nextThree:hover {
+  background: pink;
+}
+
+.next:focus,
+.nextTwo:focus,
+.nextThree:focus {
+  -webkit-box-shadow: 0 0 15px #8F1447;
+          box-shadow: 0 0 15px #8F1447;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.next:active,
+.nextTwo:active,
+.nextThree:active {
+  -webkit-box-shadow: 0 0 15px #8F1447;
+          box-shadow: 0 0 15px #8F1447;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.fa-arrow-down {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  fill: #ccc;
+  stroke: #FE4365;
+  stroke-width: 2px;
+  fill: transparent;
+  -webkit-transition: fill 0.3s, cursor 0.1s;
+  transition: fill 0.3s, cursor 0.1s;
+}
+
+.icon:hover {
+  fill: pink;
+  cursor: pointer;
+}
+
+header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
 }
 
 h1 {
@@ -259,10 +341,25 @@ header p span {
   text-transform: uppercase;
 }
 
+.header {
+  height: 100%;
+}
+
 .explanation {
   font-size: 1rem;
   line-height: 1.7;
   padding: 25px 0;
+  height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(226, 181, 161, 0.7);
 }
 
 .arrow {
@@ -296,6 +393,25 @@ header p span {
   }
 }
 
+.background-two,
+.background-one,
+.submit-container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 fieldset {
   border: none;
   padding: 0;
@@ -316,7 +432,7 @@ main h3 {
   margin: 25px 0;
   padding: 10px;
   width: 100%;
-  border: 5px solid #e2b5a1;
+  border: 5px solid rgba(226, 181, 161, 0.7);
   -webkit-transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, -webkit-box-shadow 0.5s;
   transition: background 0.5s, box-shadow 0.5s;
@@ -324,11 +440,11 @@ main h3 {
 }
 
 .name-container input:active {
-  background: #e2b5a1;
+  background: rgba(226, 181, 161, 0.7);
 }
 
 .name-container input:focus {
-  background: #e2b5a1;
+  background: rgba(226, 181, 161, 0.7);
   -webkit-box-shadow: 5px 5px #8F1447;
           box-shadow: 5px 5px #8F1447;
   outline: none;
@@ -337,20 +453,20 @@ main h3 {
 }
 
 .alert {
-  background: #e2b5a1;
+  background: rgba(226, 181, 161, 0.7);
   padding: 20px 10px;
   border: 5px solid #8F1447;
   display: inline-block;
 }
 
 .alert-change {
-  background: #A1D6E2;
-  border: 5px solid #A1D6E2;
+  background: transparent;
+  border: transparent;
 }
 
 .alert-change-relationship {
-  background: #a1e2ad;
-  border: 5px solid #a1e2ad;
+  background: transparent;
+  border: transparent;
 }
 
 .scroll-button {
@@ -387,7 +503,7 @@ main h3 {
 
 [type="radio"]:checked + label {
   color: #8F1447;
-  text-shadow: -1px -1px #8F1447, -2px -2px #8F1447, -3px -3px #8F1447;
+  text-shadow: -1px -1px #8F1447, -2px -2px #8F1447;
 }
 
 .submit-container {
@@ -408,7 +524,7 @@ main h3 {
   padding: 10px 15px;
   margin-bottom: 20px;
   border-radius: 10px;
-  background: #e2b5a1;
+  background: rgba(226, 181, 161, 0.7);
   border: 10px solid #8F1447;
   text-align: center;
   color: #474946;
@@ -420,7 +536,7 @@ main h3 {
 }
 
 .button:hover {
-  background: #eed4c8;
+  background: #bc1a5d;
 }
 
 .button:focus {
@@ -449,11 +565,28 @@ main h3 {
 }
 
 .results h2 {
-  background: #e2b5a1;
+  background: rgba(226, 181, 161, 0.7);
   line-height: 1.5;
-  border: 5px solid #a1e2ad;
+  border: 5px solid rgba(161, 226, 173, 0.7);
   margin: 20px 0;
   padding: 50px 20px;
+}
+
+.twitter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.try-again {
+  text-align: center;
 }
 
 @media (min-width: 455px) {
