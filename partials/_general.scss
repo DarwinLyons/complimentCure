@@ -2,13 +2,13 @@
 
 html {
   font-size: 125%;
-  background-position: cover, contain;
-  background-repeat: no-repeat, repeat;
-}
-
-body {
+  background-position: cover;
+  background-repeat: repeat;
   background-image: url(../assets/texture.jpg);
 }
+
+// body {
+// }
 
 .wrapper {
     max-width: 1440px;

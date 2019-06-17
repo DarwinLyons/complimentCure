@@ -181,11 +181,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 125%;
-  background-position: cover, contain;
-  background-repeat: no-repeat, repeat;
-}
-
-body {
+  background-position: cover;
+  background-repeat: repeat;
   background-image: url(../assets/texture.jpg);
 }
 
@@ -394,8 +391,7 @@ header p span {
 }
 
 .background-two,
-.background-one,
-.submit-container {
+.background-one {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -460,7 +460,6 @@ function randoIndex(optionsArray) {
   console.log(optionsArray)
   //Generating a random number between 0 and the final index position value 
   const index = Math.floor(Math.random() * optionsArray.length);
-  console.log(index);
   //Returning our passed in array with a specific index value attached
   return optionsArray[index]
   };

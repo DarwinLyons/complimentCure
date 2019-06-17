@@ -1,7 +1,6 @@
 //styles relationship-container
 .background-two,
-.background-one,
-.submit-container {
+.background-one {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -136,6 +135,7 @@ main h3 {
   transform: scale(0.9, 0.9);
 
 }
+
 
 .twitter-share-button {
   display: inline-block;
